@@ -2,14 +2,14 @@ import { GetStaticProps } from "next"
 import React, { Suspense } from "react"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("http://worldtimeapi.org/api/timezone/Asia/Beirut")
+  const res = await fetch("https://worldtimeapi.org/api/ip")
   const date = await res.json()
 
   return {
     props: {
       date,
     },
-    revalidate: 10,
+    revalidate: 20,
   }
 }
 
