@@ -13,6 +13,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const SSG = ({ date }) => {
+  console.log(date)
   return (
     <div>
       <p>{date.datetime}</p>
