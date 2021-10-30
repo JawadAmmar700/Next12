@@ -1,22 +1,24 @@
 import { GetStaticProps } from "next"
-import React, { Suspense } from "react"
+import React from "react"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("http://worldtimeapi.org/api/timezone/Asia/Beirut")
-  const date = await res.json()
+  const res = await fetch("http://localhost:4000/posts")
+  const posts = await res.json()
 
   return {
     props: {
-      date,
+      posts,
     },
-    revalidate: 20,
+    revalidate: 10,
   }
 }
 
-const ISR = ({ date }) => {
+const ISR = ({ posts }) => {
   return (
     <div>
-      <p>{date.datetime}</p>
+      {posts.map(post => (
+        <div key={post.id}>{post.title}</div>
+      ))}
     </div>
   )
 }
