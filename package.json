@@ -12,7 +12,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "json-server": "^0.17.0",
-    "next": "12.0.1-canary.3",
+    "next": "12.1.0",
     "react": "^18.0.0-alpha-4298ddbc5-20211023",
     "react-dom": "^18.0.0-alpha-4298ddbc5-20211023"
   },
